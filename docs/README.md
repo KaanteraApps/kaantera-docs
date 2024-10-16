@@ -623,6 +623,7 @@ Example payload:
 |GET   |`api/2/players/match-statistics`                          |matchStatistics        |`PlayerController#matchStatistics()`        |`PlayerMatchStatistics`          |
 |GET   |`api/2/players/comments-by-player/{id}`                   |commentsByPlayer       |`PlayerController#commentsByPlayer()`       |[`ListWCursor<CommentByPlayer>`] |
 |GET   |`api/2/players/current-season-players/{seasonId}/{teamId}`|getCurrentSeasonPlayers|`PlayerController#getCurrentSeasonPlayers()`|[`ListWCursor<T>`]               |
+|GET   |`api/2/players/trained-sessions/{playerId}`|getTrainedSessions|`PlayerController#getTrainedSessions()`|[`ListWCursor<T>`]               |
 
 Here, `<T>` equals to the `Type`, and in this particular case is `Player` (defined [below](#type-definition-player))
 
