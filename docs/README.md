@@ -623,14 +623,14 @@ Example payload:
 |GET   |`api/2/players/match-statistics`                          |matchStatistics        |`PlayerController#matchStatistics()`        |`PlayerMatchStatistics`          |
 |GET   |`api/2/players/comments-by-player/{id}`                   |commentsByPlayer       |`PlayerController#commentsByPlayer()`       |[`ListWCursor<CommentByPlayer>`] |
 |GET   |`api/2/players/current-season-players/{seasonId}/{teamId}`|getCurrentSeasonPlayers|`PlayerController#getCurrentSeasonPlayers()`|[`ListWCursor<T>`]               |
-|GET   |`api/2/players/trained-sessions/{playerId}`|getTrainedSessions|`PlayerController#getTrainedSessions()`|[`ListWCursor<T>`]               |
+|GET   |`api/2/players/trained-sessions/{playerId}`|getTrainedSessions|`PlayerController#getTrainedSessions()`|[`ListWCursor<SessionTrainedByPlayer>`]               |
 
 Here, `<T>` equals to the `Type`, and in this particular case is `Player` (defined [below](#type-definition-player))
 
 ### Type definition Player
 
 ```ts
-interface Player {	
+interface Player {
   id: long;
   nombre: string;
   firstName: string;
@@ -659,6 +659,41 @@ interface Player {
   createdOn?: Date;
   updateOn?: Date;
 }
+```
+
+Aditional descriptions
+
+```ts
+interface SessionTrainedByPlayer {
+  lastName: string;
+  reason: string;
+  fechaIni: number;
+  sesion: string;
+  Org: string;
+  idSesionProgramada: number;
+  num_jugadores: string;
+  competencia: string;
+  tarea: string;
+  dateOfClose: number;
+  Categoria: string;
+  Sede: string;
+  zone: string;
+  temporada: string;
+  principio: string;
+  playerId: number;
+  minutes: string;
+  TSK: string;
+  urlLogo: string;
+  Escuela: string;
+  firstName: string;
+  Equipo: string;
+  superficie: string;
+  namespace: string;
+  Tipo_tarea: string;
+  Asistencia_FLG: number;
+  clasificacion: string;
+}
+
 ```
 
 Example payload:
