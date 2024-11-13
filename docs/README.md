@@ -633,7 +633,7 @@ Here, `<T>` equals to the `Type`, and in this particular case is `Player` (defin
 ```ts
 Param Range
 
-?range={field}^start~end
+?range={field}^{start}~{end}
 field: Field to validate
 start: First Value to range
 end  : Last Value to range
