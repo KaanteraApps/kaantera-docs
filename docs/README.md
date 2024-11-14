@@ -136,7 +136,6 @@ Example payload:
 
 ```json
 {
-{
   "id": 987654,
   "empresa": "EmpresaUA",
   "header": "Cabecera",
@@ -168,7 +167,6 @@ Example payload:
   "idPlan": "456"
 }
 
-}
 ```
 
 :heavy_check_mark: 201 Ok Created
