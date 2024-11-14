@@ -52,6 +52,19 @@ Collections of resources are represented by a top level member named after the r
 }
 ```
 
+### Params Requests (FilterParams)
+
+The API Endpoint for GET list use a group of params requests
+
+Each field of the table is passed using the format {field}={value} divided by &
+In addition to this, the endpoints has dedicated filters to do some personalized list results, described below
+
+  orderBy: This param is used to order the results, example: orderBy=-{field}. This example represents a character descending/ascending option (- or empty) and the field
+  limit: This param is for get since 1 to limit registers
+  cursor: This is for go through the pages of a limit results
+  range: Param to get a range of values, using the next format: range={field}^{start}~{end}. By default it gets a range between start and end inclusive these.
+  rel: This kind of param gets the relations fields values from another tables.
+
 # Errors
 
 The API uses HTTP status codes to indicate an error has ocurred while processing a request. There are three main error status codes used by the API:
@@ -702,6 +715,11 @@ interface SessionTrainedByPlayer {
   Tipo_tarea: string;
   Asistencia_FLG: number;
   clasificacion: string;
+  Tipo_tarea: string,
+  categoryId: number,
+  teamId: number,
+  competencyId: number,
+  seasonId: number
 }
 
 ```
@@ -1165,6 +1183,14 @@ Example payload:
 Here, `<T>` equals to the `Type`, and in this particular case is `TareasDomain` (defined [below](#type-definition-task))
 
 ### Type definition Task
+
+```ts
+enum num_jugadores {
+  1: 'Group',
+  2: 'Collective',
+  3: 'Single'
+}
+```
 
 ```ts
 interface Task {	
