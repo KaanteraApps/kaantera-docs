@@ -59,12 +59,14 @@ The API Endpoint for GET list use a group of params requests
 Each field of the table is passed using the format {field}={value} divided by &
 In addition to this, the endpoints has dedicated filters to do some personalized list results, described below
 
+```javascript
   orderBy: This param is used to order the results, example: orderBy=-{field}. This example represents a character descending/ascending option (- or empty) and the field
   limit: This param is for get since 1 to limit registers
   cursor: This is for go through the pages of a limit results
   range: Param to get a range of values, using the next format: range={field}^{start}~{end}. By default it gets a range between start and end inclusive these.
   rel: This kind of param gets the relations fields values from another tables.
   in: This param get a list of values in a list, example: in={field}(1,2,3,4). Generally we use this for get a list of ids.
+```
 
 # Errors
 
